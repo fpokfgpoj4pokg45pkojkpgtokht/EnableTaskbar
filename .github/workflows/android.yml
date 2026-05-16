@@ -10,7 +10,7 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-
+    
     steps:
     - uses: actions/checkout@v4
 
@@ -20,9 +20,6 @@ jobs:
         java-version: '17'
         distribution: 'temurin'
         cache: gradle
-
-    - name: Validate Gradle Wrapper
-      run: gradle wrapper
 
     - name: Grant execute permission for gradlew
       run: chmod +x gradlew
@@ -35,4 +32,3 @@ jobs:
       with:
         name: EnableTaskbar-Debug-APK
         path: app/build/outputs/apk/debug/app-debug.apk
-        
